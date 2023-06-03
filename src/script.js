@@ -147,11 +147,11 @@ function Move(e) {
       SinglePlayer();
     }
 
-    if (HasMoves(e.target).length == 0 && gameIsover === false) {
-      GameOver();
-    } else {
-      gameIsover = false;
-    }
+    // if (HasMoves(e.target).length == 0 && gameIsover === false) {
+    //   GameOver();
+    // } else {
+    //   gameIsover = false;
+    // }
 
     updateStats();
   }
@@ -398,6 +398,9 @@ function GenerateSpecialCells(n) {
 
     specialCases[i](row, col, number);
   }
+
+  squares[0][0].textContent = "0";
+  squares[height - 1][width - 1].textContent = "0";
 }
 
 let gameForm = document.querySelector(".game-settings");
