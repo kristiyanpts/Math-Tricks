@@ -60,8 +60,8 @@ function AddSquares() {
     }
   }
 
-  container.style.gridTemplateColumns = `repeat(${Math.abs(width)}, 1fr)`;
-  container.style.gridTemplateRows = `repeat(${Math.abs(height)}, 1fr)`;
+  container.style.gridTemplateColumns = `repeat(${width}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${height}, 1fr)`;
 
   for (let i = 0; i < squares.length; i++) {
     for (let j = 0; j < squares[i].length; j++) {

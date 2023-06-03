@@ -19,7 +19,7 @@ body {
   background-color: #492491;
   margin: 0;
   gap: 50px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 label {
   position: relative;
