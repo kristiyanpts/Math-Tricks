@@ -1,14 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/style.css" />
     <script src="script.js" type="module"></script>
-    <title>Project</title>
-</head>
-<body>
-    
-</body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>MathTricks</title>
+  </head>
+  <body>
+    <div class="start-menu">
+      <form action="" class="game-settings">
+        <h1>Game Settings</h1>
+        <label for="option-5">Select Game Mode:</label>
+        <div class="wrapper">
+          <input type="radio" name="select-mode" id="option-5" checked />
+          <input type="radio" name="select-mode" id="option-6" />
+          <label for="option-5" class="option option-5">
+            <div class="dot"></div>
+            <span>1 vs 1</span>
+          </label>
+          <label for="option-6" class="option option-6">
+            <div class="dot"></div>
+            <span>Against Bot</span>
+          </label>
+        </div>
+        <label for="player-one">Player One Username: </label>
+        <input type="text" name="player-one" placeholder="Player One Name..." />
+        <label for="player-two" id="player-two-label"
+          >Player Two Username:
+        </label>
+        <input
+          type="text"
+          name="player-two"
+          placeholder="Player Two Name..."
+          id="player-two-show"
+        />
+        <label for="option-1">Select Size:</label>
+        <div class="wrapper">
+          <input type="radio" name="select-size" id="option-1" checked />
+          <input type="radio" name="select-size" id="option-2" />
+          <input type="radio" name="select-size" id="option-3" />
+          <input type="radio" name="select-size" id="option-4" />
+          <label for="option-1" class="option option-1">
+            <div class="dot"></div>
+            <span>6x6</span>
+          </label>
+          <label for="option-2" class="option option-2">
+            <div class="dot"></div>
+            <span>9x9</span>
+          </label>
+          <label for="option-3" class="option option-3">
+            <div class="dot"></div>
+            <span>12x12</span>
+          </label>
+          <label for="option-4" class="option option-4">
+            <div class="dot"></div>
+            <span>Custom</span>
+          </label>
+        </div>
+        <div class="game-size" id="game-size">
+          <input type="number" name="size-x" placeholder="Width (Ex. '5')" max="20" />
+          <input type="number" name="size-y" placeholder="Height (Ex. '7')" max="20" />
+        </div>
+        <label for="option-7">Select Series:</label>
+        <div class="wrapper">
+          <input type="radio" name="select-series" id="option-7" checked />
+          <input type="radio" name="select-series" id="option-8" />
+          <input type="radio" name="select-series" id="option-9" />
+          <label for="option-7" class="option option-7">
+            <div class="dot"></div>
+            <span>None</span>
+          </label>
+          <label for="option-8" class="option option-8">
+            <div class="dot"></div>
+            <span>BO3</span>
+          </label>
+          <label for="option-9" class="option option-9">
+            <div class="dot"></div>
+            <span>BO5
+        </div>
+        <button type="submit" class="button-play">PLAY</button>
+      </form>
+    </div>
+    <div class="game-container"></div>
+    <div class="game-stats">
+      <h2>Game Statistics</h2>
+      <div class="stat">
+        <div class="stat-left" style="width: 40% !important">Current Turn:</div>
+        <div class="stat-right" style="width: 55% !important">
+          <span id="players-turn">Player One</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-left">
+          <span class="player-one-stat">Player One</span>'s Points:
+        </div>
+        <div class="stat-right">
+          <span id="player-one-points">2</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-left">
+          <span class="player-two-stat">Player Two</span>'s Points:
+        </div>
+        <div class="stat-right">
+          <span id="player-two-points">2</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-left">
+          <span class="player-one-stat">Player One</span>'s Games Won:
+        </div>
+        <div class="stat-right">
+          <span id="player-one-games">2</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-left">
+          <span class="player-two-stat">Player Two</span>'s Games Won:
+        </div>
+        <div class="stat-right">
+          <span id="player-two-games">2</span>
+        </div>
+      </div>
+    </div>
+    <div class="end-screen">
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+      <div class="winner-container">
+        <p>The Winner is <span id="winner">Someone</span>!</p>
+        <div class="end-game-options">
+          <button id="rematch">Rematch</button>
+          <button id="menu">Menu</button>
+        </div>
+      </div>
+    </div>
+    <div class="notification">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="notification-text">This is a test notification!</span>
+    </div>
+  </body>
 </html>
